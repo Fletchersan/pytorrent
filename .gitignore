@@ -2,6 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,vscode,bittorrent
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,vscode,bittorrent
 
+# Ignoring test notebooks
+*.ipynb
+
+# Ingoring vscode settings
+.vscode/
+
 ### BitTorrent ###
 *.torrent
 
