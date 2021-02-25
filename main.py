@@ -1,17 +1,8 @@
 import socket
-from time import sleep
 
 from helpers import *
 
 torrent = TorrentFile("test.torrent")
-
-def try_except_loop(func, err = None, num_repeat = 8):
-    for i in range(num_repeat):
-        try:
-            return func()
-        except err:
-            print(f"error, waiting for {(2 ** i) * 15} seconds.")
-            sleep((2 ** i) * 15)
 
 def create_socket(timeout: int = 2) -> socket.socket:
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

@@ -3,6 +3,15 @@ import random
 import hashlib
 import string
 from functools import reduce
+from time import sleep
+
+def try_except_loop(func, err = None, num_repeat = 8):
+    for i in range(num_repeat):
+        try:
+            return func()
+        except err:
+            print(f"error, waiting for {(2 ** i) * 15} seconds.")
+            sleep((2 ** i) * 15)
 
 def to_bytes(val: int, num_bytes: int, signed: bool = False) -> bytes:
     return val.to_bytes(num_bytes, byteorder="big", signed= signed)
